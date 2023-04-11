@@ -8,13 +8,15 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 editor.addAction({
-  id: 'webcrack',
+  id: 'editor.action.webcrack',
   label: 'Run webcrack',
-  run(editor, ...args) {},
+  run(editor, ...args) {
+    console.log('webcrack');
+  },
 });
 
 editor.addAction({
-  id: 'save',
+  id: 'editor.action.save',
   label: 'Save',
   keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS],
   run(editor, ...args) {
