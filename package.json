@@ -1,13 +1,11 @@
 {
   "name": "webcrack-ui",
   "version": "1.0.0",
-  "description": "TODO: write a description",
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.js",
     "watch": "node esbuild.config.js --watch"
   },
-  "keywords": [],
   "author": "j4k0xb",
   "license": "MIT",
   "dependencies": {
@@ -16,8 +14,6 @@
     "webcrack": "file:../webcrack"
   },
   "devDependencies": {
-    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@types/node": "^18.15.11",
     "esbuild": "^0.17.16"
   }
