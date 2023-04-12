@@ -12,11 +12,7 @@ editor.focus();
 const reportBugButton =
   document.querySelector<HTMLAnchorElement>('.report-bug')!;
 
-reportBugButton.addEventListener('click', event => {
-  event.preventDefault();
-
-  const template = `
-## Describe the bug
+const issueTemplate = `## Describe the bug
 
 <!-- Clear and concise description of what the bug is -->
 
@@ -27,14 +23,9 @@ reportBugButton.addEventListener('click', event => {
 ## Input Code
 
 \`\`\`js
-${editor.getValue()}
-\`\`\`
-`;
 
-  window.open(
-    `https://github.com/j4k0xb/webcrack/issues/new?body=${encodeURIComponent(
-      template
-    )}`,
-    '_blank'
-  );
-});
+\`\`\``;
+
+reportBugButton.href = `https://github.com/j4k0xb/webcrack/issues/new?body=${encodeURIComponent(
+  issueTemplate
+)}`;
