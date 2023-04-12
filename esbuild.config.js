@@ -5,7 +5,6 @@ import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfil
 import esbuild from 'esbuild';
 
 const args = process.argv.slice(2);
-
 const watch = args.length > 0 && /^(?:--watch|-w)$/i.test(args[0]);
 
 const ctx = await esbuild.context({
