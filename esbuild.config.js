@@ -31,7 +31,7 @@ const ctx = await esbuild.context({
 
 if (watch) {
   await ctx.watch();
-  await ctx.serve({ servedir: '.' });
+  await ctx.serve({ servedir: 'dist' });
 } else {
   await ctx.rebuild();
   await ctx.dispose();
