@@ -1,4 +1,5 @@
-import { editor, monaco } from './editor';
+import { editor } from './editor';
+import { monaco } from './monaco';
 
 // https://esbuild.github.io/api/#live-reload
 if (process.env.NODE_ENV === 'development') {

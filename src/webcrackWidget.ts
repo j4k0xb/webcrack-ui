@@ -1,5 +1,5 @@
 import type { editor } from 'monaco-editor';
-import { monaco } from './editor';
+import { monaco } from './monaco';
 
 export class WebcrackOverlayWidget implements editor.IOverlayWidget {
   private domNode: HTMLElement | undefined;

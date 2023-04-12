@@ -1,5 +1,5 @@
 import type { editor } from 'monaco-editor';
-import { monaco } from './editor';
+import { monaco } from './monaco';
 
 // Based on https://github.com/microsoft/monaco-editor/issues/568#issuecomment-1499966160
 export class PlaceholderContentWidget implements editor.IContentWidget {
