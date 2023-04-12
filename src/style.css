@@ -23,3 +23,15 @@ html, body {
   background-color: #1387c1;
   cursor: pointer;
 }
+
+.github {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+}
+
+.report-bug {
+  position: absolute;
+  top: 22px;
+  right: 75px;
+}
