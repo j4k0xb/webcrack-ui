@@ -28,10 +28,8 @@ export class PlaceholderContentWidget implements editor.IContentWidget {
   getDomNode() {
     if (!this.domNode) {
       this.domNode = document.createElement('div');
+      this.domNode.className = 'placeholder';
       this.domNode.textContent = this.placeholder;
-      this.domNode.style.width = 'max-content';
-      this.domNode.style.fontStyle = 'italic';
-      this.domNode.style.pointerEvents = 'none';
 
       this.editor.applyFontInfo(this.domNode);
     }

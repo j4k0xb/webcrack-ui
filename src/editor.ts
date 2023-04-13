@@ -1,7 +1,6 @@
 import { webcrack } from 'webcrack';
 import { monaco } from './monaco';
 import { PlaceholderContentWidget } from './placeholderWidget';
-import { WebcrackOverlayWidget } from './webcrackWidget';
 
 export const editor = monaco.editor.create(document.getElementById('editor')!, {
   language: 'javascript',
@@ -12,7 +11,9 @@ export const editor = monaco.editor.create(document.getElementById('editor')!, {
 });
 
 new PlaceholderContentWidget('// Paste your obfuscated code here', editor);
-new WebcrackOverlayWidget(editor);
+const deobfuscateButton = document.querySelector<HTMLButtonElement>(
+  '.deobfuscate-button'
+)!;
 
 editor.addAction({
   id: 'editor.action.webcrack',

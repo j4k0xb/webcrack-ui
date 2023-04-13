@@ -2,11 +2,44 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
+  background-color: #1e1e1e;
 }
 
 .editor {
   width: 100%;
   height: 100%;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  right: 10px;
+  padding: 20px;
+  margin: 0px;
+}
+
+.placeholder {
+  width: max-content;
+  font-style: italic;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    top: unset;
+    right: unset;
+    bottom: 0px;
+    width: 100%;
+    padding-inline: 0px;
+  }
+}
+
+.navbar>* {
+  display: flex;
 }
 
 .deobfuscate-button {
@@ -16,22 +49,13 @@ html, body {
   border-radius: 6px;
   padding: 10px 16px;
   border: none;
-  transform: translateY(20px);
 }
 
-.deobfuscate-button:hover {
+.deobfuscate-button:not(:disabled):hover {
   background-color: #1387c1;
   cursor: pointer;
 }
 
-.github {
-  position: absolute;
-  top: 22px;
-  right: 30px;
-}
-
-.report-bug {
-  position: absolute;
-  top: 22px;
-  right: 75px;
+.deobfuscate-button:disabled {
+  filter: brightness(0.8) opacity(0.8)
 }
