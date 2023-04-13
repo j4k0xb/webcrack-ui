@@ -1,4 +1,3 @@
-import { webcrack } from 'webcrack';
 import { monaco } from './monaco';
 import { PlaceholderContentWidget } from './placeholderWidget';
 
@@ -19,15 +18,8 @@ editor.addAction({
   id: 'editor.action.webcrack',
   label: 'Run webcrack',
   keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.Enter],
-  async run(editor, ...args) {
-    const result = await webcrack(editor.getValue());
-    editor.pushUndoStop();
-    editor.executeEdits('webcrack', [
-      {
-        range: editor.getModel()!.getFullModelRange(),
-        text: result.code,
-      },
-    ]);
+  run(editor, ...args) {
+    deobfuscateButton.click();
   },
 });
 

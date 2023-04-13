@@ -7,7 +7,12 @@ const args = process.argv.slice(2);
 const watch = args.length > 0 && /^(?:--watch|-w)$/i.test(args[0]);
 
 const ctx = await esbuild.context({
-  entryPoints: ['src/index.ts', 'src/style.css', 'src/index.html'],
+  entryPoints: [
+    'src/index.ts',
+    'src/webcrack.worker.ts',
+    'src/style.css',
+    'src/index.html',
+  ],
   outdir: 'dist',
 
   bundle: true,
