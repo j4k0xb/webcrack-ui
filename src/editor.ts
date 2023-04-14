@@ -1,4 +1,4 @@
-import { monaco } from './monaco';
+import monaco from 'monaco-editor';
 import { PlaceholderContentWidget } from './placeholderWidget';
 
 export const editor = monaco.editor.create(document.getElementById('editor')!, {

@@ -1,13 +1,12 @@
-import type { editor } from 'monaco-editor';
-import { monaco } from './monaco';
+import monaco from 'monaco-editor';
 
 // Based on https://github.com/microsoft/monaco-editor/issues/568#issuecomment-1499966160
-export class PlaceholderContentWidget implements editor.IContentWidget {
+export class PlaceholderContentWidget implements monaco.editor.IContentWidget {
   private domNode: HTMLElement | undefined;
 
   constructor(
     private readonly placeholder: string,
-    private readonly editor: editor.ICodeEditor
+    private readonly editor: monaco.editor.ICodeEditor
   ) {
     editor.onDidChangeModelContent(() => this.onDidChangeModelContent());
     this.onDidChangeModelContent();
