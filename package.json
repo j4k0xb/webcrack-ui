@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "monaco-editor": "^0.37.1",
-    "webcrack": "^2.1.3"
+    "webcrack": "^2.3.0"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
