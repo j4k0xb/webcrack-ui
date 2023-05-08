@@ -9,7 +9,7 @@
   "author": "j4k0xb",
   "license": "MIT",
   "dependencies": {
-    "monaco-editor": "^0.37.1",
+    "monaco-editor": "^0.38.0",
     "webcrack": "^2.3.0"
   },
   "devDependencies": {
