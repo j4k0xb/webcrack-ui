@@ -52,6 +52,7 @@ const ctx = await esbuild.context({
   bundle: true,
   minify: true,
   format: 'esm',
+  sourcemap: true,
 
   // reduce quickjs bundle size
   external: [
