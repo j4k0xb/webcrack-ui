@@ -3,6 +3,9 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
 import esbuild from 'esbuild';
 import { readFile } from 'fs/promises';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const args = process.argv.slice(2);
 const watch = args.length > 0 && /^(?:--watch|-w)$/i.test(args[0]);
@@ -40,6 +43,24 @@ export default await new Promise((resolve, reject) => {
   },
 };
 
+/**
+ * Needed because NodeModulesPolyfillPlugin doesn't handle posix path
+ * @type {import('esbuild').Plugin}
+ */
+const NodePathPlugin = {
+  name: 'node-posix-path',
+  setup(build) {
+    build.onResolve({ filter: /^(node:)?path\/posix$/ }, args => {
+      return { path: 'node:path', namespace: 'node-path' };
+    });
+    build.onLoad({ filter: /.*/, namespace: 'node-path' }, args => {
+      return {
+        contents: `module.exports = require('${args.path}');`,
+      };
+    });
+  },
+};
+
 const ctx = await esbuild.context({
   entryPoints: [
     'src/index.ts',
@@ -62,6 +83,7 @@ const ctx = await esbuild.context({
   ],
 
   plugins: [
+    NodePathPlugin,
     NodeGlobalsPolyfillPlugin({ buffer: true }),
     NodeModulesPolyfillPlugin(),
     MonacoLoaderPlugin,
