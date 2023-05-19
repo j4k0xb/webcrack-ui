@@ -1,4 +1,6 @@
 import { editor } from './editor';
+import { evalCode } from './sandbox';
+import { WorkerRequest, WorkerResponse } from './webcrack.worker';
 
 // https://esbuild.github.io/api/#live-reload
 if (process.env.NODE_ENV === 'development') {
@@ -15,14 +17,29 @@ const deobfuscateButton = document.querySelector<HTMLButtonElement>(
 deobfuscateButton.disabled = false;
 deobfuscateButton.addEventListener('click', () => {
   deobfuscateButton.disabled = true;
-  worker.postMessage(editor.getValue());
+  worker.postMessage({
+    type: 'deobfuscate',
+    code: editor.getValue(),
+  } satisfies WorkerRequest);
 });
 
 const worker = new Worker('./webcrack.worker.js');
-worker.onmessage = ({ data }) => {
+worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
   deobfuscateButton.disabled = false;
 
-  if (data.success) {
+  if (data.type === 'sandbox') {
+    try {
+      return worker.postMessage({
+        type: 'sandbox',
+        result: await evalCode(data.code),
+      } satisfies WorkerRequest);
+    } catch (error) {
+      return worker.postMessage({
+        type: 'cancel',
+        reason: String(error),
+      } satisfies WorkerRequest);
+    }
+  } else if (data.type === 'result') {
     editor.pushUndoStop();
     editor.executeEdits('webcrack', [
       {
@@ -30,7 +47,7 @@ worker.onmessage = ({ data }) => {
         text: data.code,
       },
     ]);
-  } else {
-    alert(data.error);
+  } else if (data.type === 'error') {
+    alert(data.message);
   }
 };
