@@ -75,13 +75,6 @@ const ctx = await esbuild.context({
   format: 'esm',
   sourcemap: true,
 
-  // reduce quickjs bundle size
-  external: [
-    '*.WASM_DEBUG_ASYNCIFY.js',
-    '*.WASM_DEBUG_SYNC.js',
-    '*.WASM_RELEASE_ASYNCIFY.js',
-  ],
-
   plugins: [
     NodePathPlugin,
     NodeGlobalsPolyfillPlugin({ buffer: true }),
