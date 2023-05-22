@@ -16,7 +16,7 @@
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "@types/node": "^18.16.12",
+    "@types/node": "^18.16.14",
     "esbuild": "^0.17.19"
   }
 }
