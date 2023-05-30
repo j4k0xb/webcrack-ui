@@ -1,7 +1,7 @@
 # Introduction
 
 webcrack is a tool for reverse engineering javascript.
-It can deobfuscate, unminify, and unpack bundles, making it readable and editable again.
+It can deobfuscate, unminify, and unpack bundles, to resemble the original source code as much as possible.
 
 - 🚀 **Performance** - Especially for large files
 - 🛡️ **Safety** - Considers variable references and scope
@@ -9,3 +9,11 @@ It can deobfuscate, unminify, and unpack bundles, making it readable and editabl
 - ✍🏻 **Readability** - Removes obfuscator/bundler artifacts
 - ⌨️ **TypeScript** - All code is written in TypeScript
 - 🧪 **Tests** - To make sure nothing breaks
+
+## Platforms
+
+| Platform | Deobfuscate | Unminify | Unpack | Configurable |
+| -------- | ----------- | -------- | ------ | ------------ |
+| node     | ✅          | ✅       | ✅     | ✅           |
+| cli      | ✅          | ✅       | ✅     | ❌           |
+| web      | ✅          | ✅       | ❌     | ❌           |

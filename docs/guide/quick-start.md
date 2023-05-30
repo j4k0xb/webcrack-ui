@@ -1,8 +1,5 @@
 # Get Started
 
-- To quickly try it in your browser, open the [Playground](https://webcrack.netlify.app/).
-- Use the Node.js library or CLI for more advanced usage.
-
 ## Installation
 
 :::info Prerequisites
@@ -24,11 +21,3 @@ Node.js:
 ```bash
 npm install webcrack
 ```
-
-## Platforms
-
-| Platform | Deobfuscate | Unminify | Unpack | Configurable |
-| -------- | ----------- | -------- | ------ | ------------ |
-| node     | ✅          | ✅       | ✅     | ✅           |
-| cli      | ✅          | ✅       | ✅     | ❌           |
-| web      | ✅          | ✅       | ❌     | ❌           |
