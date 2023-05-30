@@ -4,7 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.js",
-    "watch": "node esbuild.config.js --watch"
+    "watch": "node esbuild.config.js --watch",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "author": "j4k0xb",
   "license": "MIT",
@@ -17,6 +20,7 @@
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@types/node": "^18.16.14",
-    "esbuild": "^0.17.19"
+    "esbuild": "^0.17.19",
+    "vitepress": "^1.0.0-beta.1"
   }
 }

@@ -1,5 +1,7 @@
 node_modules
 dist
 
-# Local Netlify folder
 .netlify
+
+docs/.vitepress/dist
+docs/.vitepress/cache
