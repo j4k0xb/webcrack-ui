@@ -61,7 +61,7 @@ result.save('output-dir');
 
 New folder structure:
 
-```text
+```txt
 ├── index.js
 ├── utils
 │   └── color.js

@@ -1,6 +1,6 @@
 # Command Line Interface
 
-```text
+```txt
 Usage: webcrack [options] <file>
 
 Deobfuscate, unminify and unpack bundled javascript
