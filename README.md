@@ -18,7 +18,7 @@ Keep in mind to encode them (e.g. `encodeURIComponent` in js).
 
 | Parameter | Description                                  |
 | --------- | -------------------------------------------- |
-| `code`    | Code as a string                             |
+| `code`    | Code as a string (max length: ~16,000)       |
 | `url`     | URL to fetch code from                       |
 | `run`     | Automatically start deobfuscation (optional) |
 
