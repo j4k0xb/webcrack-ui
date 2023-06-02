@@ -51,3 +51,28 @@ worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
     alert(data.message);
   }
 };
+
+const queryParams = new URLSearchParams(location.search);
+let code = queryParams.get('code');
+if (queryParams.has('url')) {
+  const url =
+    'https://corsproxy.io/?' + encodeURIComponent(queryParams.get('url')!);
+  const response = await fetch(url);
+  if (response.ok) {
+    code = await response.text();
+  } else {
+    console.error(response);
+  }
+}
+
+if (code !== null) {
+  editor.executeEdits('webcrack', [
+    {
+      range: editor.getModel()!.getFullModelRange(),
+      text: code,
+    },
+  ]);
+  if (queryParams.has('run')) {
+    deobfuscateButton.click();
+  }
+}
