@@ -4,8 +4,6 @@ layout: home
 
 hero:
   name: 'webcrack'
-  # text: 'Deobfuscate, unminify and unpack bundled javascript'
-  # tagline: My great project tagline
   logo: https://user-images.githubusercontent.com/55899582/231488871-e83fb827-1b25-4ec9-a326-b14244677e87.png
   actions:
     - theme: brand

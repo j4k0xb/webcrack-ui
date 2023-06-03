@@ -6,8 +6,18 @@ export default defineConfig({
   description: 'Deobfuscate, unminify and unpack bundled javascript',
   base: '/docs/',
   outDir: '../dist/docs',
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: 'https://user-images.githubusercontent.com/55899582/231488871-e83fb827-1b25-4ec9-a326-b14244677e87.png',
+      },
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: 'https://user-images.githubusercontent.com/55899582/231488871-e83fb827-1b25-4ec9-a326-b14244677e87.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/introduction' },
