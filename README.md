@@ -9,4 +9,6 @@
 
 ## About
 
-Frontend for the [webcrack](https://github.com/j4k0xb/webcrack) deobfuscator/unpacker.
+Frontend for the [webcrack](https://github.com/j4k0xb/webcrack) deobfuscator/unpacker that runs entirely in the browser.
+
+Documentation: <https://webcrack.netlify.app/docs>
