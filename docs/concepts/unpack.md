@@ -8,6 +8,8 @@ This feature can unpack [webpack](https://webpack.js.org/) and [browserify](http
 
 - Modules may get converted to ESM.
 
+- webpackJsonp or chunks are not supported _yet_.
+
 ::: tip
 You can modify the unpacked modules and bundle them again:
 
