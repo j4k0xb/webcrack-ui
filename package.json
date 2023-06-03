@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.js",
-    "watch": "node esbuild.config.js --watch",
+    "dev": "node esbuild.config.js --watch",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
