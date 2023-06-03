@@ -35,12 +35,12 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Features',
+        text: 'Concepts',
         items: [
-          { text: 'Deobfuscation', link: '/features/deobfuscate' },
-          { text: 'Unminifying', link: '/features/unminify' },
-          { text: 'Bundle Unpacking', link: '/features/unpack' },
-          { text: 'JSX', link: '/features/jsx' },
+          { text: 'Deobfuscation', link: '/concepts/deobfuscate' },
+          { text: 'Unminifying', link: '/concepts/unminify' },
+          { text: 'Bundle Unpacking', link: '/concepts/unpack' },
+          { text: 'JSX', link: '/concepts/jsx' },
         ],
       },
     ],
