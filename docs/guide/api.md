@@ -56,7 +56,7 @@ const result = await webcrack(code, {
     ),
   }),
 });
-result.save('output-dir');
+await result.save('output-dir');
 ```
 
 New folder structure:
