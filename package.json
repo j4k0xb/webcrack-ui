@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node esbuild.config.js",
-    "dev": "node esbuild.config.js --watch",
+    "build": "npm run playground:build && npm run docs:build",
+    "playground:build": "node esbuild.config.js",
+    "playground:dev": "node esbuild.config.js --watch",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
