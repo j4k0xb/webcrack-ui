@@ -31,7 +31,9 @@ Keep in mind to encode them (e.g. `encodeURIComponent` in js).
 
 Examples:
 
-- <https://webcrack.netlify.app/?code=1-1&run>
-- <https://webcrack.netlify.app/?url=https%3A%2F%2Fpastebin.com%2Fraw%2Fye3usFvH>
+- [/?code=1-1&run](https://webcrack.netlify.app/?code=1-1&run)
+- [/?url=https://pastebin.com/raw/ye3usFvH](https://webcrack.netlify.app/?url=https%3A%2F%2Fpastebin.com%2Fraw%2Fye3usFvH)
 
-Note: Use this only if you don't mind netlify or corsproxy.io seeing the code/url, otherwise paste it directly into the editor.
+::: info
+Use this only if you don't mind netlify or corsproxy.io seeing the code/url, otherwise paste it directly into the editor.
+:::
