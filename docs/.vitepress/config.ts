@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'Quick Start', link: '/guide/quick-start' },
           { text: 'CLI', link: '/guide/cli' },
           { text: 'Node.js API', link: '/guide/api' },
+          { text: 'Website', link: '/guide/web' },
         ],
       },
       {
