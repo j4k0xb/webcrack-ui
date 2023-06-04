@@ -20,8 +20,10 @@ It can deobfuscate, unminify, and unpack bundles, to resemble the original sourc
 
 ## Planned Features
 
+- rename variables
 - support older obfuscator.io versions
-- unpack more bundlers: `rollup`, `parcel`, `swc`, etc.
+- unpack `rollup`, `parcel`, `swc`, etc.
+- unpack bundles split into multiple chunks
 - multi-file editor and zip downloading for the website
 - convert [@babel/preset-env](https://babeljs.io/docs/babel-preset-env) helpers to modern syntax
 - decompile typescript enums
