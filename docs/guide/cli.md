@@ -1,5 +1,9 @@
 # Command Line Interface
 
+```bash
+npm install -g webcrack
+```
+
 ```txt
 Usage: webcrack [options] <file>
 

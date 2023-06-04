@@ -5,6 +5,10 @@ This is a pure ESM package, so you need to use `import` instead of `require`.
 For more info, check out [this gist](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
 :::
 
+```bash
+npm install webcrack
+```
+
 ## Basic Usage
 
 ```js
