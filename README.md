@@ -9,22 +9,4 @@
 
 ## About
 
-Frontend for the [webcrack](https://github.com/j4k0xb/webcrack) deobfuscator/unpacker that runs entirely in the browser.
-
-## Query Parameters
-
-Pass either `code` or `url` parameters to load code into the editor.
-Keep in mind to encode them (e.g. `encodeURIComponent` in js).
-
-| Parameter | Description                                  |
-| --------- | -------------------------------------------- |
-| `code`    | Code as a string (max length: ~16,000)       |
-| `url`     | URL to fetch code from                       |
-| `run`     | Automatically start deobfuscation (optional) |
-
-Examples:
-
-- <https://webcrack.netlify.app/?code=1-1&run>
-- <https://webcrack.netlify.app/?url=https%3A%2F%2Fpastebin.com%2Fraw%2Fye3usFvH>
-
-Note: Use this only if you don't mind netlify or corsproxy.io seeing the code/url, otherwise paste it directly into the editor.
+Playground and docs for the [webcrack](https://github.com/j4k0xb/webcrack) deobfuscator/unpacker: <https://webcrack.netlify.app/docs>
