@@ -45,6 +45,8 @@ entry.code; // 'const a = require("./1.js");'
 
 ## Customize Paths
 
+Useful for reverse-engineering and tracking changes across multiple versions of a bundle.
+
 If a matching node in the AST of a module is found, it will be renamed to the given path.
 
 - Path starting with `./` are relative to the output directory.
