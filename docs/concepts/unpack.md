@@ -2,7 +2,7 @@
 
 This feature can unpack [webpack](https://webpack.js.org/) and [browserify](https://browserify.org/) bundles into separate files.
 
-## webpack
+## Webpack
 
 - `__webpack_require(id)__` gets rewritten to `require('./relative/path.js')`.
 
@@ -20,7 +20,7 @@ npx webpack-cli ./webcrack-out
 Depending on how the bundle was created, you may need to create a custom [webpack config](https://webpack.js.org/configuration).
 :::
 
-## browserify
+## Browserify
 
 Each module has a numerical id and contains a list of dependencies: `{ './foo': 1, './bar': 3 }`.
 These paths are relative to the current module and are used like `require('./foo')`.
