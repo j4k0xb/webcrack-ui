@@ -25,8 +25,6 @@ deobfuscateButton.addEventListener('click', () => {
 
 const worker = new Worker('./webcrack.worker.js');
 worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
-  deobfuscateButton.disabled = false;
-
   if (data.type === 'sandbox') {
     try {
       return worker.postMessage({
@@ -40,6 +38,7 @@ worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
       } satisfies WorkerRequest);
     }
   } else if (data.type === 'result') {
+    deobfuscateButton.disabled = false;
     editor.pushUndoStop();
     editor.executeEdits('webcrack', [
       {
