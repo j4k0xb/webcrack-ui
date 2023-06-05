@@ -8,11 +8,11 @@ hero:
   logo: https://user-images.githubusercontent.com/55899582/231488871-e83fb827-1b25-4ec9-a326-b14244677e87.png
   actions:
     - theme: brand
-      text: Playground
-      link: https://webcrack.netlify.app
-    - theme: alt
       text: Get Started
       link: /guide/introduction
+    - theme: alt
+      text: Open Playground
+      link: https://webcrack.netlify.app
 
 features:
   - title: Deobfuscate
@@ -21,7 +21,7 @@ features:
   - title: Unminify
     details: Convert minified code to human readable code
     icon: 🧹
-  - title: Unpack bundles
+  - title: Unpack Bundles
     details: Extract modules from webpack and browserify bundles to separate files
     icon: 📦
 ---
