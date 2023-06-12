@@ -20,7 +20,7 @@
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "@types/node": "^18.16.16",
+    "@types/node": "^18.16.17",
     "esbuild": "^0.17.19",
     "vitepress": "^1.0.0-beta.1"
   }
