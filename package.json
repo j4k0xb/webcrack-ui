@@ -13,7 +13,7 @@
   "author": "j4k0xb",
   "license": "MIT",
   "dependencies": {
-    "monaco-editor": "^0.38.0",
+    "monaco-editor": "^0.39.0",
     "sandybox": "^1.1.2",
     "webcrack": "^2.5.1"
   },
