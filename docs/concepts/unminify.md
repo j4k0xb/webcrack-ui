@@ -1,8 +1,8 @@
 # Unminify
 
-Bundlers and obfuscators often minify code to reduce the download time (or make it harder to read).
+Bundlers and obfuscators commonly minify code (remove new lines and whitespace, replace variable names with shorter ones, use a shorter syntax).
 
-The following patterns are detected and unminified:
+Most unminify sites just format the code, but webcrack also converts the syntax back to make it more readable and similar to the original code:
 
 ```js
 console['\x6c\x6f\x67']('\x61'); // console.log('a')
@@ -17,6 +17,3 @@ if ((a(), b())) c(); // a(); if (b()) c();
 void 0; // undefined
 'red' === color; // color === 'red'
 ```
-
-Note that variable and function names are often mangled to be shorter.
-This information is lost when minifying, so it's not possible to restore the original names.
