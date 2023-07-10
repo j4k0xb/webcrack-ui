@@ -10,16 +10,6 @@ This feature can unpack [webpack](https://webpack.js.org/) and [browserify](http
 
 - webpackJsonp or chunks are not supported _yet_.
 
-::: tip
-You can modify the unpacked modules and bundle them again:
-
-```bash
-npx webpack-cli ./webcrack-out
-```
-
-Depending on how the bundle was created, you may need to create a custom [webpack config](https://webpack.js.org/configuration).
-:::
-
 ## Browserify
 
 Each module has a numerical id and contains a list of dependencies: `{ './foo': 1, './bar': 3 }`.
