@@ -16,4 +16,5 @@ return a(), b(), c(); // a(); b(); return c();
 if ((a(), b())) c(); // a(); if (b()) c();
 void 0; // undefined
 'red' === color; // color === 'red'
+JSON.parse('{"a":1}'); // { a: 1 }
 ```
