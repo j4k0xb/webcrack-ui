@@ -13,15 +13,15 @@
   "author": "j4k0xb",
   "license": "MIT",
   "dependencies": {
-    "monaco-editor": "^0.39.0",
+    "monaco-editor": "^0.40.0",
     "sandybox": "^1.1.2",
-    "webcrack": "^2.5.1"
+    "webcrack": "^2.6.1"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "@types/node": "^18.16.16",
-    "esbuild": "^0.17.19",
-    "vitepress": "^1.0.0-beta.2"
+    "@types/node": "^20.4.1",
+    "esbuild": "^0.18.11",
+    "vitepress": "^1.0.0-beta.5"
   }
 }
