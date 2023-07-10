@@ -5,7 +5,7 @@ It can deobfuscate [obfuscator.io](https://github.com/javascript-obfuscator/java
 and unpack [webpack](https://webpack.js.org/)/[browserify](https://browserify.org/),
 to resemble the original source code as much as possible.
 
-- 🚀 **Performance** - 400% faster than [synchrony](https://github.com/relative/synchrony)
+- 🚀 **Performance** - 500% faster than [synchrony](https://github.com/relative/synchrony)
 - 🛡️ **Safety** - Considers variable references and scope
 - 🔬 **Auto-detection** - Finds code patterns without needing a config
 - ✍🏻 **Readability** - Removes obfuscator/bundler artifacts
