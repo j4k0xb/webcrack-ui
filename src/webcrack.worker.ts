@@ -36,7 +36,7 @@ self.onmessage = async ({ data }: MessageEvent<WorkerRequest>) => {
   const { webcrack } = await import('webcrack');
 
   try {
-    const result = await webcrack(data.code, { sandbox });
+    const result = await webcrack(data.code, { sandbox, unpack: false });
     postMessage({
       type: 'result',
       code: result.code,
