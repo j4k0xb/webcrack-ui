@@ -47,6 +47,7 @@ worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
       },
     ]);
   } else if (data.type === 'error') {
+    deobfuscateButton.disabled = false;
     alert(data.message);
   }
 };
