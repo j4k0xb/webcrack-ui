@@ -12,11 +12,6 @@ to resemble the original source code as much as possible.
 - ⌨️ **TypeScript** - All code is written in TypeScript
 - 🧪 **Tests** - To make sure nothing breaks
 
-:::danger
-vm2 was recently deprecated and has unfixable [critical sandbox escape vulnerabilities](https://github.com/patriksimek/vm2/issues/533).
-Use the cli/api for deobfuscation at your own risk, the online version should be safe.
-:::
-
 ## Platforms
 
 | Platform | Deobfuscate | Unminify | Unpack | Configurable |
