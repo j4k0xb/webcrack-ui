@@ -23,12 +23,12 @@ The code can be passed as a file or via stdin:
 
 ```bash
 webcrack input.js
-# or
-echo '1+1' | webcrack
+# or download/pipe a script from a website
+curl https://pastebin.com/raw/ye3usFvH | webcrack
 ```
 
 By default it outputs debug logs and the deobfuscated/unminified code to the terminal.
-If you want to write the code to a file, you can do:
+To write the code to a file, you can do:
 
 ```bash
 webcrack input.js > output.js
