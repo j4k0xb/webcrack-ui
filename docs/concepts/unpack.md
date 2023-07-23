@@ -8,7 +8,7 @@ This feature can unpack [webpack](https://webpack.js.org/) and [browserify](http
 
 - Modules may get converted to ESM.
 
-- webpackJsonp or chunks are not supported _yet_.
+- multiple chunks are not supported _yet_.
 
 ## Browserify
 
