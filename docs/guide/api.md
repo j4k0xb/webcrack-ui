@@ -34,11 +34,11 @@ await result.save('output-dir');
 ```js
 const { bundle } = await webcrack(code);
 bundle.type; // 'webpack' or 'browserify'
-bundle.entryId; // 0
-bundle.modules; // Map(10) { 0 => Module { id: 0, ... }, 1 => ... }
+bundle.entryId; // '0'
+bundle.modules; // Map(10) { '0' => Module { id: '0', ... }, 1 => ... }
 
 const entry = bundle.modules.get(bundle.entryId);
-entry.id; // 0
+entry.id; // '0'
 entry.path; // './index.js'
 entry.code; // 'const a = require("./1.js");'
 ```
