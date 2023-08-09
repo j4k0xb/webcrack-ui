@@ -11,6 +11,8 @@ if (process.env.NODE_ENV === 'development') {
 
 editor.focus();
 
+const fileList = document.querySelector<HTMLSelectElement>('#files')!;
+
 const deobfuscateButton = document.querySelector<HTMLButtonElement>(
   '.deobfuscate-button'
 )!;
@@ -43,9 +45,23 @@ worker.onmessage = async ({ data }: MessageEvent<WorkerResponse>) => {
     editor.executeEdits('webcrack', [
       {
         range: editor.getModel()!.getFullModelRange(),
-        text: data.code,
+        text: data.files[0].code,
       },
     ]);
+
+    fileList.innerHTML = '';
+    fileList.onchange = () => {
+      const file = data.files[fileList.selectedIndex];
+      editor.setValue(file.code);
+    };
+
+    for (const file of data.files) {
+      const option = document.createElement('option');
+      option.textContent = file.path;
+      fileList.appendChild(option);
+    }
+
+    fileList.style.visibility = data.files.length > 1 ? 'visible' : 'hidden';
   } else if (data.type === 'error') {
     deobfuscateButton.disabled = false;
     alert(data.message);

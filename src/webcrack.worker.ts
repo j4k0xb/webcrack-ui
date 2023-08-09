@@ -7,7 +7,7 @@ export type WorkerRequest =
 
 export type WorkerResponse =
   | { type: 'sandbox'; code: string }
-  | { type: 'result'; code: string }
+  | { type: 'result'; files: { code: string; path: string }[] }
   | { type: 'error'; message: string };
 
 self.onmessage = async ({ data }: MessageEvent<WorkerRequest>) => {
@@ -36,11 +36,16 @@ self.onmessage = async ({ data }: MessageEvent<WorkerRequest>) => {
   const { webcrack } = await import('webcrack');
 
   try {
-    const result = await webcrack(data.code, { sandbox, unpack: false });
-    postMessage({
-      type: 'result',
-      code: result.code,
-    } satisfies WorkerResponse);
+    const result = await webcrack(data.code, { sandbox });
+    const files: { code: string; path: string }[] = [];
+
+    result.bundle?.modules.forEach(module => {
+      files.push({ code: module.code, path: module.path });
+    });
+    files.sort((a, b) => a.path.localeCompare(b.path));
+    files.unshift({ code: result.code, path: 'deobfuscated.js' });
+
+    postMessage({ type: 'result', files } satisfies WorkerResponse);
   } catch (error) {
     console.error(error);
     postMessage({

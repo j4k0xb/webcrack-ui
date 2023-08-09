@@ -25,8 +25,8 @@ to resemble the original source code as much as possible.
 - rename variables
 - support older obfuscator.io versions
 - unpack `rollup`, `parcel`, `swc`, etc.
-- unpack bundles split into multiple chunks
-- multi-file editor and zip downloading for the website
+- unpack multi-chunk bundles
+- download zip of all unpacked modules in the playground
 - convert [@babel/preset-env](https://babeljs.io/docs/babel-preset-env) helpers to modern syntax
 - decompile typescript enums
 - decompile other frontend frameworks: `vue`, `svelte`, etc.
