@@ -9,7 +9,10 @@ export const editor = monaco.editor.create(document.getElementById('editor')!, {
   wordWrap: 'on',
 });
 
-new PlaceholderContentWidget('// Paste your obfuscated code here', editor);
+new PlaceholderContentWidget(
+  '// Paste your obfuscated or bundled code here',
+  editor
+);
 const deobfuscateButton = document.querySelector<HTMLButtonElement>(
   '.deobfuscate-button'
 )!;
