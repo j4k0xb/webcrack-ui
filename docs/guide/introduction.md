@@ -17,8 +17,10 @@ to resemble the original source code as much as possible.
 | Platform | Deobfuscate | Unminify | Unpack | Configurable |
 | -------- | ----------- | -------- | ------ | ------------ |
 | node     | ✅          | ✅       | ✅     | ✅           |
-| cli      | ✅          | ✅       | ✅     | ❌           |
-| web      | ✅          | ✅       | ❌     | ❌           |
+| cli      | ✅          | ✅       | ✅     | 🚧           |
+| web      | ✅          | ✅       | ✅     | 🚧           |
+
+🚧: only the `mangle` option can be toggled as of now
 
 ## Planned Features
 
