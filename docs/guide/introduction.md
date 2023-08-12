@@ -22,7 +22,6 @@ to resemble the original source code as much as possible.
 
 ## Planned Features
 
-- rename variables
 - support older obfuscator.io versions
 - unpack `rollup`, `parcel`, `swc`, etc.
 - unpack multi-chunk bundles

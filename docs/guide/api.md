@@ -43,6 +43,19 @@ entry.path; // './index.js'
 entry.code; // 'const a = require("./1.js");'
 ```
 
+## Options
+
+The default options are:
+
+```js
+await webcrack(code, {
+  jsx: true, // Decompile react components to JSX
+  unpack: true, // Extract modules from the bundle
+  deobfuscate: true, // Deobfuscate the code
+  mangle: false, // Mangle variable names
+});
+```
+
 ## Customize Paths
 
 Useful for reverse-engineering and tracking changes across multiple versions of a bundle.
@@ -77,15 +90,3 @@ New folder structure:
 ```
 
 See [@codemod/matchers](https://github.com/codemod-js/codemod/tree/main/packages/matchers#readme) for more information about matchers.
-
-## Options
-
-If you know the code, turn off some options to improve the performance.
-
-```js
-await webcrack(code, {
-  jsx: false, // when the code doesn't use React
-  unpack: false, // when the code is not bundled
-  deobfuscate: false, // when the code is not obfuscated
-});
-```

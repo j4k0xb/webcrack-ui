@@ -13,6 +13,8 @@ editor.focus();
 
 const fileList = document.querySelector<HTMLSelectElement>('#files')!;
 
+const mangleButton = document.querySelector<HTMLInputElement>('#mangle')!;
+
 const deobfuscateButton = document.querySelector<HTMLButtonElement>(
   '.deobfuscate-button'
 )!;
@@ -22,6 +24,7 @@ deobfuscateButton.addEventListener('click', () => {
   worker.postMessage({
     type: 'deobfuscate',
     code: editor.getValue(),
+    mangle: mangleButton.checked,
   } satisfies WorkerRequest);
 });
 

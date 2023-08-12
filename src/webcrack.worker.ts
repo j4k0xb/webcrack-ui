@@ -1,7 +1,7 @@
 import { Sandbox } from 'webcrack/dist/deobfuscator/vm';
 
 export type WorkerRequest =
-  | { type: 'deobfuscate'; code: string }
+  | { type: 'deobfuscate'; code: string; mangle: boolean }
   | { type: 'sandbox'; result: unknown }
   | { type: 'cancel'; reason: string };
 
@@ -36,7 +36,7 @@ self.onmessage = async ({ data }: MessageEvent<WorkerRequest>) => {
   const { webcrack } = await import('webcrack');
 
   try {
-    const result = await webcrack(data.code, { sandbox });
+    const result = await webcrack(data.code, { sandbox, mangle: data.mangle });
     const files: { code: string; path: string }[] = [];
 
     result.bundle?.modules.forEach(module => {

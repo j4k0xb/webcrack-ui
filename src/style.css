@@ -42,7 +42,7 @@ html, body {
   display: flex;
 }
 
-.deobfuscate-button {
+.primary-button {
   color: #ffffff;
   background-color: #169de0;
   font-size: 16px;
@@ -51,13 +51,41 @@ html, body {
   border: none;
 }
 
-.deobfuscate-button:not(:disabled):hover {
+.primary-button:not(:disabled):hover {
   background-color: #1387c1;
   cursor: pointer;
 }
 
-.deobfuscate-button:disabled {
+.primary-button:disabled {
   filter: brightness(0.8) opacity(0.8)
+}
+
+.deobfuscate-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.dropdown {
+  position: relative;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2e2e2e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 6px 6px;
+  padding: 12px 16px;
+  z-index: 1;
 }
 
 #files {

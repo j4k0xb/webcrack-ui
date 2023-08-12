@@ -16,6 +16,7 @@ Options:
   -V, --version        output the version number
   -o, --output <path>  output directory for bundled files
   -f, --force          overwrite output directory
+  -m, --mangle         mangle variable names
   -h, --help           display help for command
 ```
 
