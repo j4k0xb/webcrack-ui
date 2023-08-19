@@ -14,12 +14,14 @@ webcrack can deobfuscate code obfuscated with the following options (pretty much
   - Variable/Function Wrapper Type
   - None/Base64/RC4 Encoding
   - Split Strings
+  - Unicode Escape Sequence
 - Other Transformations
   - Compact
   - Simplify
   - Numbers To Expressions
   - Control Flow Flattening
   - Dead Code Injection
+  - Transform Object Keys
 - Disable Console Output
 - Self Defending
 - Debug Protection
