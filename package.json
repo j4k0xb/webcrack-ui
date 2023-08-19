@@ -15,7 +15,7 @@
   "dependencies": {
     "monaco-editor": "^0.40.0",
     "sandybox": "^1.1.2",
-    "webcrack": "^2.9.0"
+    "webcrack": "^2.9.1"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
