@@ -1,9 +1,18 @@
 import monaco from 'monaco-editor';
 import { PlaceholderContentWidget } from './placeholderWidget';
 
+monaco.editor.defineTheme('dark', {
+  base: 'vs-dark',
+  inherit: true,
+  rules: [],
+  colors: {
+    'editor.background': '#1e1e20',
+  },
+});
+
 export const editor = monaco.editor.create(document.getElementById('editor')!, {
   language: 'javascript',
-  theme: 'vs-dark',
+  theme: 'dark',
   automaticLayout: true,
   padding: { top: 20 },
   wordWrap: 'on',
