@@ -7,6 +7,7 @@ It runs entirely in the browser, so the code never leaves your computer.
 
 - Press `F1` to open the command palette
 - Press `Alt`+`Enter` to run webcrack on the code
+- Press `Shift`+`Enter` to evaluate and replace the selected code (multi-cursor supported)
 - Press `Ctrl`+`S` to download the code
 
 :::

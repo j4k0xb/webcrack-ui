@@ -1,5 +1,6 @@
 import monaco from 'monaco-editor';
 import { PlaceholderContentWidget } from './placeholderWidget';
+import { evalCode } from './sandbox';
 
 monaco.editor.defineTheme('dark', {
   base: 'vs-dark',
@@ -32,6 +33,39 @@ editor.addAction({
   keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.Enter],
   run(editor, ...args) {
     deobfuscateButton.click();
+  },
+});
+
+// TODO: parse/generate the AST to properly replace the selection?
+editor.addAction({
+  id: 'editor.action.evaluate',
+  label: 'Evaluate and replace selection',
+  keybindings: [monaco.KeyMod.Shift | monaco.KeyCode.Enter],
+  async run(editor, ...args) {
+    const selections = editor.getSelections();
+    if (!selections) return;
+
+    const expressions = selections
+      .map(selection => editor.getModel()!.getValueInRange(selection))
+      .join(',\n');
+    // New lines are added so line comments don't mess up the rest of the code
+    const code = `[\n${expressions}\n]`;
+    const values = (await evalCode(code)) as unknown[];
+
+    // @ts-ignore
+    const generator = (await import('@babel/generator')).default.default;
+    const t = (await import('@babel/types')).default;
+    const nodes = values.map(value => t.valueToNode(value));
+    const resultCodes = nodes.map(node => generator(node).code);
+
+    editor.pushUndoStop();
+    editor.executeEdits(
+      'webcrack',
+      selections.map((selection, index) => ({
+        range: selection,
+        text: resultCodes[index],
+      }))
+    );
   },
 });
 
