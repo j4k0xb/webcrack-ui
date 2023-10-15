@@ -69,6 +69,12 @@ editor.addAction({
   },
 });
 
+const commandPalette = editor.getAction('editor.action.quickCommand')!;
+editor.addCommand(
+  monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP,
+  () => commandPalette.run()
+);
+
 editor.addAction({
   id: 'editor.action.save',
   label: 'Save',
