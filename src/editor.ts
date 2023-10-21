@@ -38,8 +38,8 @@ editor.addAction({
 
 // TODO: parse/generate the AST to properly replace the selection?
 editor.addAction({
-  id: 'editor.action.evaluate',
-  label: 'Evaluate and replace selection',
+  id: 'editor.action.evaluate-expression',
+  label: 'Evaluate and replace selection (value)',
   keybindings: [monaco.KeyMod.Shift | monaco.KeyCode.Enter],
   async run(editor, ...args) {
     const selections = editor.getSelections();
@@ -64,6 +64,38 @@ editor.addAction({
       selections.map((selection, index) => ({
         range: selection,
         text: resultCodes[index],
+      }))
+    );
+  },
+});
+
+editor.addAction({
+  id: 'editor.action.evaluate-raw',
+  label: 'Evaluate and replace selection (raw)',
+  keybindings: [
+    monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.Enter,
+  ],
+  async run(editor, ...args) {
+    const selections = editor.getSelections();
+    if (!selections) return;
+
+    const expressions = selections
+      .map(selection => editor.getModel()!.getValueInRange(selection))
+      .join(',\n');
+    // New lines are added so line comments don't mess up the rest of the code
+    const code = `[\n${expressions}\n]`;
+    const values = (await evalCode(code)) as unknown[];
+    if (values.some(value => typeof value !== 'string')) {
+      console.log(values);
+      throw new Error('All evaluated values must be strings');
+    }
+
+    editor.pushUndoStop();
+    editor.executeEdits(
+      'webcrack',
+      selections.map((selection, index) => ({
+        range: selection,
+        text: values[index] as string,
       }))
     );
   },

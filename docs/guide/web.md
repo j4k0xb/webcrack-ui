@@ -7,7 +7,8 @@ It runs entirely in the browser, so the code never leaves your computer.
 
 - Press `F1` to open the command palette
 - Press `Alt`+`Enter` to run webcrack on the code
-- Press `Shift`+`Enter` to evaluate and replace the selected code (multi-cursor supported)
+- Press `Shift`+`Enter` to evaluate and replace the selected code as a value (`[[3+4]][0]` -> `[7]`)
+- Press `Ctrl`+`Shift`+`Enter` to evaluate and replace the selected code raw (`'x' + ' = \'val\''` -> `x = 'val'` instead of a string)
 - Press `Ctrl`+`S` to download the code
 
 :::
