@@ -46,7 +46,10 @@ editor.addAction({
     if (!selections) return;
 
     const expressions = selections
-      .map(selection => editor.getModel()!.getValueInRange(selection))
+      .map(selection => {
+        const value = editor.getModel()!.getValueInRange(selection);
+        return `eval(${JSON.stringify(value)})`;
+      })
       .join(',\n');
     // New lines are added so line comments don't mess up the rest of the code
     const code = `[\n${expressions}\n]`;
@@ -80,7 +83,10 @@ editor.addAction({
     if (!selections) return;
 
     const expressions = selections
-      .map(selection => editor.getModel()!.getValueInRange(selection))
+      .map(selection => {
+        const value = editor.getModel()!.getValueInRange(selection);
+        return `eval(${JSON.stringify(value)})`;
+      })
       .join(',\n');
     // New lines are added so line comments don't mess up the rest of the code
     const code = `[\n${expressions}\n]`;
